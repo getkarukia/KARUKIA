@@ -2,6 +2,8 @@
 
 **The complete AI-assisted development methodology, delivered via MCP.**
 
+**Latest: v1.2.3** — Enriched context.json v2 for reliable inter-skill communication.
+
 21 tools, 11 skills, 935+ security/quality/pentest checkpoints. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
 
 ## What is KARUKIA?
