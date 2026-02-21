@@ -1,4 +1,4 @@
-# KARUKIA MCP v1.2.1
+# KARUKIA MCP v1.2.2
 
 **The complete AI-assisted development methodology, delivered via MCP.**
 
@@ -58,19 +58,21 @@ Restart Claude Code (`/quit` then relaunch) or your IDE. The 21 KARUKIA tools ar
 
 Tell your AI:
 
-> "Call the `install` tool from karukia"
+> "karukia install"
 
 KARUKIA scans your project, detects your stack, and generates configuration files (security scope, CLAUDE.md, memory structure).
 
 ### Step 4 — Start working
 
-> "Use /auto to add user authentication"
-> "Use /auto to audit security"
-> "Use /auto to run a pentest"
+Just describe what you need in natural language:
 
-`/auto` is your daily driver. It routes your request to the right specialists automatically.
+> "karukia: add user authentication"
+> "karukia: audit security"
+> "karukia: run a pentest"
 
-> **Tip:** You only need two tools: `/install` (once) then `/auto` (always). For direct control, call `/neo`, `/viper`, or `/jeffrey` individually. Call `start` anytime for a full guide.
+The orchestrator (`auto`) analyzes your request and routes to the right specialists automatically.
+
+> **Tip:** You only need two commands: `karukia install` (once) then `karukia` + your request (always). For direct control, ask for a specific skill: "karukia neo", "karukia viper", "karukia jeffrey". Say "karukia start" anytime for a full guide.
 
 ### Where to put the config
 
@@ -193,19 +195,19 @@ Your AI calls `neo` — becomes the Neo security auditor — follows the methodo
 
 ### Build a feature with guardrails
 
-> "Implement user authentication with /jeffrey"
+> "karukia jeffrey: implement user authentication"
 
 Your AI calls `jeffrey` — becomes the Jeffrey architect — implements with TDD, then chains to Neo for security validation (rejection loop: if Neo rejects, Jeffrey fixes, max 3 iterations).
 
 ### Pentest your app
 
-> "Run a pentest with /viper"
+> "karukia viper"
 
 Your AI calls `viper` — deploys the Brigade methodology with 16 specialized agents across Recon, Surface Analysis, and Exploitation phases.
 
 ### Orchestrate everything
 
-> "Use /auto to handle my request"
+> "karukia: add a logout button and audit security"
 
 Your AI calls `auto` — analyzes the request — routes to the right skill(s) — manages the chain.
 
