@@ -1,4 +1,4 @@
-# KARUKIA MCP v1.2
+# KARUKIA MCP v1.2.1
 
 **The complete AI-assisted development methodology, delivered via MCP.**
 
