@@ -278,7 +278,7 @@ Obtenir une certification HDS, ISO 27001 ou SOC 2 est coûteux — non pas parce
 
 ### Construit sur une vraie expérience
 
-KARUKIA est né de l'expérience directe de la certification HDS 2.0 et ISO 27001 dans le secteur de la santé en France. Les checklists ne sont pas théoriques — elles reflètent ce qu'un auditeur réel demande, point par point.
+KARUKIA est né de l'expérience de sécurisation d'un SaaS de santé en vue des certifications HDS 2.0 et ISO 27001. Les checklists ne sont pas théoriques — elles reflètent ce qu'un auditeur réel demande, point par point.
 
 ---
 

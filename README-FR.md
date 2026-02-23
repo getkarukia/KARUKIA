@@ -262,7 +262,7 @@ KARUKIA tourne en local par défaut (stdio via `npx`). Gratuit, zéro infrastruc
 
 KARUKIA est développé par **[KARUK IA Solutions](https://karukia.com)**, studio SaaS B2B spécialisé dans les domaines réglementés (santé, finance, pharma), basé en Guadeloupe. 🇬🇵
 
-Construit à partir de l'expérience directe de la certification HDS 2.0 / ISO 27001 dans le secteur de la santé en France. La méthodologie a été ouverte pour partager ce qu'un vrai processus de certification exige — pas de la théorie.
+Construit à partir de l'expérience de sécurisation d'un SaaS de santé en vue des certifications HDS 2.0 / ISO 27001. La méthodologie a été ouverte pour partager ce qu'un vrai processus de certification exige — pas de la théorie.
 
 > *Made in Guadeloupe — L'IA ne remplace pas l'expert, elle le libère.*
 

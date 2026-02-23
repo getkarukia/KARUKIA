@@ -227,7 +227,7 @@ Your AI calls `auto` — analyzes the request — routes to the right skill(s) �
 
 ## Documentation
 
-- [Livre Blanc (Francais)](./LIVRE-BLANC.md) — Document technique detaille : architecture, methodologie, cas d'usage
+- [Livre Blanc (Français)](./LIVRE-BLANC.md) — Document technique détaillé : architecture, méthodologie, cas d'usage
 - [Whitepaper (English)](./WHITEPAPER.md) — Technical deep-dive: architecture, methodology, use cases
 
 ---
@@ -246,7 +246,7 @@ KARUKIA runs locally by default (stdio via `npx`). Free, zero infrastructure.
 
 KARUKIA is developed by **[KARUK IA Solutions](https://karukia.com)**, a B2B SaaS studio specializing in regulated industries (healthcare, finance, pharma), based in Guadeloupe. 🇬🇵
 
-Built from direct experience with HDS 2.0 / ISO 27001 certification in the French healthcare sector. The methodology was made open to share what a real certification process actually requires — not just theory.
+Built from the experience of securing a healthcare SaaS application for HDS 2.0 / ISO 27001 certification. The methodology was made open to share what a real certification process actually requires — not just theory.
 
 > *Made in Guadeloupe — AI doesn't replace the expert, it frees them.*
 
