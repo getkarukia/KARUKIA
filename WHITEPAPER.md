@@ -4,9 +4,14 @@
 
 *Document in English. Version française : [LIVRE-BLANC.md](./LIVRE-BLANC.md)*
 
-<p align="center">
-  <img src="./KARUKIA.webp" alt="KARUKIA" width="120"/>
-</p>
+```
+    ○─┬─○                              ○─┬─○
+      │   ╲       K A R U K  I A     ╱   │
+    ○─┤    ○────────────────────────○    ├─○
+      │         ≋≋  ◈ · MCP · ◈  ≋≋      │
+    ○─┴─○                              ○─┴─○
+                 Made in Guadeloupe  🇬🇵
+```
 
 ---
 
@@ -112,9 +117,15 @@ Typical skill prompt size: 15-40 KB depending on active checklists.
 
 ### Layer 1 — Defensive Audit (Neo)
 
-<p align="left">
-  <img src="./neo-avatar.webp" alt="Neo" width="80"/>
-</p>
+```
+  ╔═══════════════════════════════════════════════════════╗
+  ║    ●─────────────────────────────────────────●       ║
+  ║    │   ◉               N E O               ◉ │       ║
+  ║    │        Auditeur Cybersécurité            │       ║
+  ║    ●─────────────────────────────────────────●       ║
+  ║   OWASP · HDS · ISO 27001 · SOC 2 · PCI · HIPAA     ║
+  ╚═══════════════════════════════════════════════════════╝
+```
 
 **Persona:** Neo, senior cybersecurity auditor.
 
@@ -335,10 +346,6 @@ A managed KARUKIA server allows an entire team to connect via a single API key:
 ---
 
 ## 11. About
-
-<p align="left">
-  <img src="./KARUKIA.webp" alt="KARUKIA" width="80"/>
-</p>
 
 KARUKIA is developed by **[KARUK IA Solutions](https://karukia.com)**, a B2B SaaS studio specializing in regulated industries (healthcare, finance, pharma), based in Guadeloupe. 🇬🇵
 

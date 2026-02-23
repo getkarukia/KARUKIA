@@ -1,8 +1,13 @@
 # KARUKIA MCP
 
-<p align="center">
-  <img src="./KARUKIA.webp" alt="KARUKIA" width="120"/>
-</p>
+```
+    ○─┬─○                              ○─┬─○
+      │   ╲       K A R U K  I A     ╱   │
+    ○─┤    ○────────────────────────○    ├─○
+      │         ≋≋  ◈ · MCP · ◈  ≋≋      │
+    ○─┴─○                              ○─┴─○
+                 Made in Guadeloupe  🇬🇵
+```
 
 **La méthodologie complète de développement assistée par IA, livrée via MCP.**
 
