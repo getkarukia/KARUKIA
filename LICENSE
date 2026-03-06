@@ -1,31 +1,27 @@
 KARUKIA MCP - License
 
-Copyright (c) 2026 KARUKIA (contact@karukia.com)
+Copyright (c) 2026 KARUKIA Solutions (contact@karukia.com)
 
-Permission is hereby granted, free of charge, to any person or organization
-("User") to use this software and associated knowledge base ("KARUKIA MCP")
-for personal, educational, and internal professional purposes, subject to
-the following conditions:
-
-1. USAGE
-   KARUKIA MCP runs locally on the User's machine via the MCP protocol.
-   No account or registration is required.
+1. FREE USE
+   KARUKIA MCP is free for personal and educational use. No account or
+   registration is required. The software runs locally on the User's machine
+   via the MCP protocol — no data is sent externally.
 
 2. COMMERCIAL USE
-   Any commercial use, resale, redistribution for profit, or integration of
-   KARUKIA MCP (in whole or in part) into a paid product or service requires
-   prior written authorization from KARUKIA.
+   Any commercial use, including integration into a product or service used
+   in a professional or business context, requires prior written authorization
+   from KARUKIA Solutions.
 
    Contact: contact@karukia.com
 
 3. ATTRIBUTION
    All copies or substantial portions of this software must retain this
-   license notice and the KARUKIA copyright.
+   license notice and the KARUKIA Solutions copyright.
 
 4. MODIFICATION
-   Users may fork and modify this software for their own internal use.
+   Users may fork and modify this software for personal or educational use.
    Public redistribution of modified versions requires written authorization
-   from KARUKIA (contact@karukia.com).
+   from KARUKIA Solutions (contact@karukia.com).
 
 5. NO WARRANTY
    THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR

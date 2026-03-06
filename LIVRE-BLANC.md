@@ -89,7 +89,7 @@ Le serveur communique via **stdio** (entrée/sortie standard). Aucun port résea
                                           └── Même moteur, mêmes checklists
 ```
 
-Pour les équipes, KARUKIA propose un serveur géré accessible via clé API. Ce mode est en cours de développement — **liste d'attente ouverte** sur contact@karukia.com.
+Pour les équipes, KARUKIA supporte un transport HTTP streamable avec authentification bearer token, logs structurés et rate limiting par session.
 
 ### Ce que le serveur retourne
 
@@ -132,7 +132,7 @@ Neo est systématiquement appelé après Jeffrey (implémentation). Si Neo rejet
 
 ### Qualité web (Opquast)
 
-245 règles Opquast v5.0 en 14 catégories. Deux modes : validation ciblée avant merge (`opo`) ou audit exhaustif (`audit_opquast`). Basé sur [Opquast](https://www.opquast.com/).
+245 règles Opquast v5.0 en 14 catégories. Deux modes : validation ciblée avant merge (`opo`) ou audit exhaustif (`audit_opquast`). Basé sur [Opquast](https://www.opquast.com/) — le référentiel français de qualité web en libre accès (CC-BY-SA), utilisé par plus de 19 000 professionnels certifiés depuis 2004. Merci à Opquast de mettre leur référentiel à disposition de la communauté.
 
 ### Sécurité offensive (Viper)
 
@@ -259,12 +259,12 @@ Obtenir une certification HDS, ISO 27001 ou SOC 2 est coûteux — non pas parce
 | Dimensions couvertes | 1 (sécurité) | 11 (sécurité à architecture) |
 | Construction de preuves | Snapshots manuels | Mémoire structurée inter-sessions |
 | Cycle complet | Audit seul | Code → Sécurité → Qualité → Pentest |
-| Origine | Théorique | Né d'une vraie certification HDS/ISO 27001 |
+| Origine | Théorique | Construit en préparant une vraie certification HDS/ISO 27001 |
 | Qualité web | Absente | 245 règles Opquast (référentiel français) |
 
-### Construit sur une vraie expérience
+### Construit sur le terrain
 
-KARUKIA est né de l'expérience de sécurisation d'un SaaS de santé en vue des certifications HDS 2.0 et ISO 27001. Les checklists ne sont pas théoriques — elles reflètent ce qu'un auditeur réel demande, point par point.
+KARUKIA est né du développement d'un SaaS de santé en cours de préparation pour les certifications HDS 2.0 et ISO 27001. La méthodologie a été construite pour répondre à une vraie question : qu'est-ce que la certification exige concrètement, dès le premier jour de développement ? Les checklists reflètent ce qu'un auditeur réel demande, point par point — pas de la théorie.
 
 ---
 
@@ -305,17 +305,6 @@ npx karukia-mcp
 
 Chaque développeur installe KARUKIA en local via `npx`. Zéro serveur, zéro infrastructure, zéro coût.
 
-### Équipe — Serveur géré (liste d'attente)
-
-Un serveur KARUKIA géré permet à toute une équipe de se connecter via une clé API unique :
-
-- **Cohérence** — les mêmes checklists pour tous les développeurs
-- **Audit trail centralisé** — logs structurés Pino JSON
-- **Gestion des accès** — bearer token par équipe
-- **Disponibilité** — sans dépendance à la machine locale
-
-> Ce mode est en cours de développement. Rejoignez la liste d'attente : **contact@karukia.com**
-
 ---
 
 ## 10. Comparaison
@@ -333,23 +322,17 @@ Un serveur KARUKIA géré permet à toute une équipe de se connecter via une cl
 
 ---
 
-## 11. À propos
+## 11. À propos & Licence
 
 KARUKIA est développé par **[KARUK IA Solutions](https://karukia.com)**, studio SaaS B2B spécialisé dans les domaines réglementés (santé, finance, pharma), basé en Guadeloupe. 🇬🇵
 
-La méthode KARUKIA est la méthodologie interne utilisée pour construire et certifier des produits SaaS dans des environnements HDS 2.0, ISO 27001 et RGPD. Elle est mise à disposition gratuitement pour usage personnel, éducatif et professionnel interne.
+KARUKIA est né du développement d'un SaaS de santé en cours de préparation pour les certifications HDS 2.0 et ISO 27001. La méthodologie a été construite pour répondre à une vraie question : qu'est-ce que la certification exige concrètement, dès le premier jour de développement ?
 
 > *Made in Guadeloupe — L'IA ne remplace pas l'expert, elle le libère.*
 
----
+KARUKIA MCP est **gratuit pour usage personnel et éducatif**. Aucun compte requis.
 
-## 12. Licence et contact
-
-KARUKIA MCP est **gratuit** pour un usage personnel, éducatif et professionnel interne. Aucun compte requis.
-
-L'usage commercial ou la revente nécessitent une autorisation écrite.
-
-**Contact :** contact@karukia.com
+Pour un usage commercial, contactez **KARUKIA Solutions** : contact@karukia.com
 
 **npm :** [karukia-mcp](https://www.npmjs.com/package/karukia-mcp)
 

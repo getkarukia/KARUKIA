@@ -132,7 +132,7 @@ Point-by-point audit against 6 compliance frameworks. Every finding cites file:l
 
 245 rules across 14 categories. Two modes: targeted validation (`opo`, before merge) or exhaustive audit (`audit_opquast`).
 
-Based on [Opquast](https://www.opquast.com/) — the French web quality reference.
+Based on [Opquast](https://www.opquast.com/) — the French open web quality reference (CC-BY-SA), trusted by 19,000+ certified professionals since 2004. We thank Opquast for making their checklist framework publicly available.
 
 ### Offensive (Viper)
 
@@ -230,9 +230,9 @@ KARUKIA prepares the evidence dossier so that when the auditor arrives, everythi
 | Change management | `change_report` — ISO 27001 A.8.32 compliance |
 | Documented pentest | Viper report with CVSS v4 + MITRE ATT&CK |
 
-### Built from Real Experience
+### Built from Real Development
 
-KARUKIA was built from the experience of securing a healthcare SaaS application for HDS 2.0 and ISO 27001 certification. The checklists are not theoretical — they reflect what a real auditor asks, point by point.
+KARUKIA was built while developing a healthcare SaaS application targeting HDS 2.0 and ISO 27001 certification. The methodology was designed to answer a real question: what does it actually take to get certified, from day one of development? The checklists are not theoretical — they reflect what a real auditor asks, point by point.
 
 ---
 
@@ -272,16 +272,6 @@ npx karukia-mcp
 
 Each developer runs the server locally via `npx`. Zero infrastructure, zero cost.
 
-### Team — Managed server (waitlist)
-
-A managed KARUKIA server connects an entire team via a single API key:
-
-- **Consistency** — same checklists for all developers
-- **Centralized audit trail** — structured logs
-- **Access control** — per-team bearer token
-
-> Join the waitlist: **contact@karukia.com**
-
 ---
 
 ## 10. Comparison
@@ -299,23 +289,17 @@ A managed KARUKIA server connects an entire team via a single API key:
 
 ---
 
-## 11. About
+## 11. About & License
 
 KARUKIA is developed by **[KARUK IA Solutions](https://karukia.com)**, a B2B SaaS studio specializing in regulated industries (healthcare, finance, pharma), based in Guadeloupe. 🇬🇵
 
-The KARUKIA methodology is the internal framework used to build and certify SaaS products in HDS 2.0, ISO 27001, and GDPR environments. It is made freely available for personal, educational, and internal professional use.
+KARUKIA was built while developing a healthcare SaaS application targeting HDS 2.0 and ISO 27001 certification. The methodology was designed to answer a real question: what does it actually take to get certified, from day one of development?
 
 > *Made in Guadeloupe — AI doesn't replace the expert, it frees them.*
 
----
+KARUKIA MCP is **free for personal and educational use**. No account required.
 
-## 12. License and Contact
-
-KARUKIA MCP is **free** for personal, educational, and internal professional use. No account required.
-
-Commercial use or resale requires written authorization.
-
-**Contact:** contact@karukia.com
+For commercial use, contact **KARUKIA Solutions**: contact@karukia.com
 
 **npm:** [karukia-mcp](https://www.npmjs.com/package/karukia-mcp)
 

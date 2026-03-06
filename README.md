@@ -14,7 +14,7 @@
 
 **Latest: v3.0**
 
-27 tools, 20 skills, 1673+ checkpoints across 11 audit dimensions. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
+26 tools, 19 skills, 1673+ checkpoints across 11 audit dimensions. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
 
 ## What is KARUKIA?
 
@@ -49,7 +49,7 @@ SCAN      → karukia_scan       "Run all 11 dimensions at once"
 
 ## Quick Start
 
-**Prerequisites:** [Node.js](https://nodejs.org/) 20 or later.
+**Prerequisites:** [Node.js](https://nodejs.org/) 22 or later.
 
 ### Step 1 — Add KARUKIA to your project
 
@@ -70,7 +70,7 @@ Create or edit `.mcp.json` at the root of your project:
 
 ### Step 2 — Restart your AI client
 
-Restart Claude Code (`/quit` then relaunch) or your IDE. The 27 KARUKIA tools are now available.
+Restart Claude Code (`/quit` then relaunch) or your IDE. The 26 KARUKIA tools are now available.
 
 > On first launch, `npx` downloads the package automatically (~175 KB). Subsequent launches use the cached version.
 
@@ -84,15 +84,15 @@ KARUKIA scans your project, detects your stack, and generates configuration file
 
 ### Step 4 — Start working
 
-Just describe what you need in natural language:
+Just tell your AI what you need in natural language, always through the `auto` orchestrator:
 
-> "karukia: add user authentication"
-> "karukia: audit security"
-> "karukia: run a pentest"
+> "karukia auto: add user authentication"
+> "karukia auto: audit security"
+> "karukia auto: run a pentest"
 
-The orchestrator (`auto`) analyzes your request and routes to the right specialists automatically.
+`auto` is the recommended entry point for everything — it analyzes your request and routes to the right specialists automatically (Jeffrey → Neo → Opo, or Neo alone, or Viper, etc.).
 
-> **Tip:** You only need two commands: `karukia install` (once) then `karukia` + your request (always). For direct control, ask for a specific skill: "karukia neo", "karukia viper", "karukia jeffrey". Say "karukia start" anytime for a full guide.
+> **Tip:** You only need two commands: `karukia install` (once) then `karukia auto` + your request (always). `auto` handles the rest. For advanced use, skills can also be called directly: "karukia neo", "karukia viper". Say "karukia start" anytime for a full guide.
 
 ### Where to put the config
 
@@ -128,7 +128,7 @@ Then add to your global AI config (`~/.claude.json` for Claude Code):
 
 ---
 
-## 27 Tools
+## 26 Tools
 
 ### Essential (start here)
 
@@ -203,7 +203,7 @@ Each skill returns a complete prompt that transforms your AI into a specialist.
 
 Content, personal data, e-commerce, forms, identity, images, internationalization, links, navigation, newsletter, presentation, security UX, server performance, and code structure.
 
-Based on [Opquast](https://www.opquast.com/) — the French web quality reference used by 15,000+ professionals.
+Based on [Opquast](https://www.opquast.com/) — the French open web quality reference (CC-BY-SA), trusted by 19,000+ certified professionals since 2004. We thank Opquast for making their checklist framework publicly available.
 
 ### Offensive Security (Viper) — 4 checklists, 245+ tests
 
@@ -250,7 +250,7 @@ Your AI calls `viper` — deploys the Brigade methodology with 16 specialized ag
 
 ### Orchestrate everything
 
-> "karukia: add a logout button and audit security"
+> "karukia auto: add a logout button and audit security"
 
 Your AI calls `auto` — analyzes the request — routes to the right skill(s) — manages the chain.
 
@@ -263,42 +263,25 @@ Your AI calls `auto` — analyzes the request — routes to the right skill(s) �
 
 ---
 
-## Cloud / Enterprise
-
-KARUKIA runs locally by default (stdio via `npx`). Free, zero infrastructure.
-
-**For teams** — a managed KARUKIA server (waitlist): connect your whole team via a single API key, centralized audit trail, consistent checklists across all developers.
-
-→ **contact@karukia.com** to join the waitlist.
-
----
-
 ## About
 
 KARUKIA is developed by **[KARUK IA Solutions](https://karukia.com)**, a B2B SaaS studio specializing in regulated industries (healthcare, finance, pharma), based in Guadeloupe. 🇬🇵
 
-Built from the experience of securing a healthcare SaaS application for HDS 2.0 / ISO 27001 certification. The methodology was made open to share what a real certification process actually requires — not just theory.
+KARUKIA was built while developing a healthcare SaaS application for HDS 2.0 and ISO 27001 certification. The methodology grew out of a real question: what does it actually take to get certified, from day one of development? The checklists reflect what a real auditor asks, point by point — not theory.
+
+The project is built around three principles:
+1. **Separation of concerns** — Security, quality, and implementation are separate disciplines handled by separate AI personas.
+2. **Formal checkpoints over gut feeling** — 1673+ documented checkpoints beat "I think it's fine."
+3. **Defense in depth** — Defensive audit first, quality validation second, offensive testing last.
 
 > *Made in Guadeloupe — AI doesn't replace the expert, it frees them.*
 
 ---
 
-## Why KARUKIA
-
-KARUKIA is a structured AI-assisted development methodology built around three principles:
-
-1. **Separation of concerns** — Security, quality, and implementation are separate disciplines handled by separate AI personas.
-2. **Formal checkpoints over gut feeling** — 1673+ documented checkpoints beat "I think it's fine."
-3. **Defense in depth** — Defensive audit first, quality validation second, offensive testing last.
-
-Built from real-world experience securing a healthcare SaaS application to HDS 2.0 / ISO 27001 standards.
-
----
-
 ## License
 
-KARUKIA MCP is free for personal, educational, and internal professional use.
+KARUKIA MCP is **free for personal and educational use**.
 
-**Commercial use or resale requires written authorization.** Contact: contact@karukia.com
+For commercial use, contact **KARUKIA Solutions**: contact@karukia.com
 
 See [LICENSE](./LICENSE) for full terms.
