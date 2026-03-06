@@ -12,11 +12,16 @@
 
 **La méthodologie complète de développement assistée par IA, livrée via MCP.**
 
-**Dernière version : v3.0** — 11 dimensions d'audit, 9 nouveaux skills dimensionnels, scan global.
+**Dernière version : v3.0.4** — 11 dimensions d'audit, 9 nouveaux skills dimensionnels, scan global.
 
 26 outils, 19 skills, 1673+ points de contrôle sur 11 dimensions. Compatible avec n'importe quelle plateforme IA (Claude Code, Cursor, Windsurf, Copilot…) via le Model Context Protocol.
 
 *English version: [README.md](./README.md)*
+
+---
+
+> **Vous utilisez KARUKIA pour votre équipe ou votre entreprise ?** Une licence commerciale est requise.
+> Voir [Licence commerciale](#licence-commerciale) ci-dessous ou contactez **contact@karukia.com**
 
 ---
 
@@ -293,10 +298,32 @@ Le projet est construit autour de trois principes :
 
 ---
 
-## Licence
+## Licence commerciale
 
-KARUKIA MCP est **gratuit pour usage personnel et éducatif**.
+KARUKIA MCP est distribué sous [Business Source License 1.1](./LICENSE) (BUSL-1.1).
 
-Pour toute utilisation commerciale, contactez **KARUKIA Solutions** — contact@karukia.com
+### Usage gratuit (pas de licence nécessaire)
 
-Voir [LICENSE](./LICENSE) pour les conditions complètes.
+- Projets personnels et développeurs individuels
+- Établissements d'enseignement, étudiants, recherche
+- Organisations à but non lucratif
+
+### Licence commerciale requise
+
+Si votre entreprise ou ESN utilise KARUKIA en production ou le déploie pour ses équipes de développeurs, une licence commerciale est requise.
+
+| Formule | Prix HT/an | Équipe |
+|---------|------------|--------|
+| **Starter** | 5 000 EUR | Jusqu'à 10 développeurs |
+| **Business** | 12 000 EUR | Jusqu'à 50 développeurs |
+| **Enterprise** | 20 000 EUR | Développeurs illimités + support prioritaire |
+
+Toutes les formules incluent : accès complet aux 26 outils, 19 skills, 1673+ points de contrôle sur 11 dimensions d'audit, et toutes les mises à jour pendant la durée de la licence. Licence annuelle, renouvelable.
+
+**Contact :** contact@karukia.com
+
+> Un seul audit de sécurité externe coûte 10-15k EUR. KARUKIA donne à toute votre équipe la méthodologie pour auditer en continu — pour moins que le prix d'un seul audit.
+
+### Conversion de licence
+
+Le 6 mars 2028, le Logiciel sera automatiquement converti sous [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).

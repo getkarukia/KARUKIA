@@ -12,9 +12,16 @@
 
 **The complete AI-assisted development methodology, delivered via MCP.**
 
-**Latest: v3.0**
+**Latest: v3.0.4**
 
 26 tools, 19 skills, 1673+ checkpoints across 11 audit dimensions. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
+
+---
+
+> **Using KARUKIA for your team or company?** A commercial license is required.
+> See [Commercial Licensing](#commercial-licensing) below or contact **contact@karukia.com**
+
+---
 
 ## What is KARUKIA?
 
@@ -151,7 +158,6 @@ Each skill returns a complete prompt that transforms your AI into a specialist.
 | `audit_opquast` | Quality Auditor | Deep Opquast compliance audit with 14 thematic checklists |
 | `ebios_rm_audit` | Risk Analyst | EBIOS Risk Manager methodology (ANSSI) — formal risk analysis |
 | `security_hardening` | Hardening Planner | Security improvement chantiers |
-| `terraform_update` | IaC Specialist | Terraform automation for KMS, GCS, IAM |
 | `doc_refactor` | Doc Auditor | Documentation accuracy audit vs actual code |
 
 ### Dimensional Skills (v3.0 New)
@@ -278,10 +284,32 @@ The project is built around three principles:
 
 ---
 
-## License
+## Commercial Licensing
 
-KARUKIA MCP is **free for personal and educational use**.
+KARUKIA MCP is licensed under the [Business Source License 1.1](./LICENSE) (BUSL-1.1).
 
-For commercial use, contact **KARUKIA Solutions** — contact@karukia.com
+### Free use (no license needed)
 
-See [LICENSE](./LICENSE) for full terms.
+- Personal projects and individual developers
+- Educational institutions, students, research
+- Non-profit organizations
+
+### Commercial license required
+
+If your company or consulting firm uses KARUKIA for production work or deploys it across developer teams, a commercial license is required.
+
+| Plan | Price (EUR HT/year) | Team size |
+|------|---------------------|-----------|
+| **Starter** | 5 000 | Up to 10 developers |
+| **Business** | 12 000 | Up to 50 developers |
+| **Enterprise** | 20 000 | Unlimited developers + priority support |
+
+All plans include: full access to all 26 tools, 19 skills, 1673+ checkpoints across 11 audit dimensions, and all updates for the license duration. Annual license, renewable.
+
+**Contact:** contact@karukia.com
+
+> A single external security audit costs 10-15k EUR. KARUKIA gives your entire team the methodology to run audits continuously — for less than the price of one.
+
+### Change License
+
+On March 6, 2028, the Licensed Work will automatically convert to the [Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0).
