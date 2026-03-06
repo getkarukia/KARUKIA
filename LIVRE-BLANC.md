@@ -1,8 +1,8 @@
 # KARUKIA — Livre Blanc
 
-**Méthodologie de développement assistée par IA : sécurité, qualité et pentest via le protocole MCP.**
+**Méthodologie de développement assistée par IA : 11 dimensions d'audit via le protocole MCP.**
 
-*Document en français. English version: [WHITEPAPER.md](./WHITEPAPER.md)*
+*Version 3.0 — Document en français. English version: [WHITEPAPER.md](./WHITEPAPER.md)*
 
 ```
 ██╗  ██╗ █████╗ ██████╗ ██╗   ██╗██╗  ██╗    ██╗ █████╗
@@ -26,6 +26,7 @@ Les assistants IA (Claude, GPT, Copilot) sont puissants mais génériques. Quand
 - Aucune traçabilité : impossible de prouver qu'un contrôle a été effectué
 - Pas de reproductibilité : deux audits du même code donnent des résultats différents
 - Zéro conformité : les frameworks (ISO 27001, SOC 2, HDS) exigent des preuves formelles
+- Aucune visibilité sur la qualité du code TypeScript, l'architecture, les performances, ou la dette technique
 
 ## 2. La solution KARUKIA
 
@@ -70,9 +71,9 @@ Aucun compte, aucune clé API, aucune donnée envoyée à l'extérieur. Le serve
 ```
 Développeur <-> Client IA <-> [stdio] <-> KARUKIA MCP Server (local)
                                               |
-                                              ├── 11 skills (prompt builders)
-                                              ├── 24 checklists (935+ points)
-                                              └── Système de mémoire (sessions, knowledge)
+                                              ├── 20 skills (prompt builders)
+                                              ├── 31 checklists (1673+ points)
+                                              └── Système de mémoire (sessions, trackers)
 ```
 
 Le serveur communique via **stdio** (entrée/sortie standard). Aucun port réseau ouvert, aucun appel HTTP. Tout reste sur la machine locale.
@@ -97,11 +98,11 @@ Chaque tool MCP retourne un **prompt monolithique** — un seul bloc de texte co
 Exemple simplifié pour `neo` (audit sécurité) :
 
 ```
-[GUARD v2 — obligations non-négociables]
+[GUARD — obligations non-négociables]
 +
 [Persona Neo — identité, style, expertise]
 +
-[Workflow — 5 étapes obligatoires]
+[Workflow — étapes obligatoires]
 +
 [Checklist OWASP — 62 contrôles inline]
 +
@@ -110,29 +111,13 @@ Exemple simplifié pour `neo` (audit sécurité) :
 [Template de sortie — format table + verdict]
 ```
 
-Taille typique d'un prompt skill : 15-40 Ko selon les checklists actives.
-
 ---
 
-## 4. Les trois couches d'audit
+## 4. Les 11 dimensions d'audit
 
-### Couche 1 — Audit défensif (Neo)
+### Sécurité défensive (Neo)
 
-```
-  ╔═══════════════════════════════════════════════════════╗
-  ║    ●─────────────────────────────────────────●       ║
-  ║    │   ◉               N E O               ◉ │       ║
-  ║    │        Auditeur Cybersécurité            │       ║
-  ║    ●─────────────────────────────────────────●       ║
-  ║   OWASP · HDS · ISO 27001 · SOC 2 · PCI · HIPAA     ║
-  ╚═══════════════════════════════════════════════════════╝
-```
-
-**Persona :** Neo, auditeur cybersécurité senior.
-
-**Méthode :** Vérification point par point de chaque contrôle applicable. Chaque finding doit citer le fichier et la ligne. Chaque verdict est soit CONFORME, soit NON-CONFORME avec preuve.
-
-**Frameworks supportés :**
+Vérification point par point de chaque contrôle applicable. Chaque finding cite le fichier et la ligne. Chaque verdict est soit CONFORME, soit NON-CONFORME avec preuve.
 
 | Framework | Points | Périmètre |
 |-----------|--------|-----------|
@@ -143,43 +128,47 @@ Taille typique d'un prompt skill : 15-40 Ko selon les checklists actives.
 | PCI-DSS v4.0 | 97 | Traitement de paiements |
 | HIPAA | 67 | Données de santé (US) |
 
-**Sortie :** Table de findings avec sévérité (CRITIQUE / MAJEUR / MINEUR / INFO), référence checklist, fichier:ligne, et verdict global APPROUVÉ ou REJETÉ.
+Neo est systématiquement appelé après Jeffrey (implémentation). Si Neo rejette, Jeffrey corrige — boucle maximum 3 itérations.
 
-**Chaîne :** Neo est systématiquement appelé après Jeffrey (implémentation) pour valider la sécurité du code produit. Si Neo rejette, Jeffrey corrige — boucle maximum 3 itérations.
+### Qualité web (Opquast)
 
-### Couche 2 — Audit qualité (Opo / Opquast)
+245 règles Opquast v5.0 en 14 catégories. Deux modes : validation ciblée avant merge (`opo`) ou audit exhaustif (`audit_opquast`). Basé sur [Opquast](https://www.opquast.com/).
 
-**Persona :** Opo, gardien de la qualité web.
+### Sécurité offensive (Viper)
 
-**Méthode :** Vérification des 245 règles Opquast v5.0 réparties en 14 catégories thématiques. Deux modes :
+Méthodologie BRIGADE avec 16 agents spécialisés. Scoring CVSS v4.0, mapping MITRE ATT&CK, narratifs d'attaque réalistes. Couverture web, cloud, et santé.
 
-- **opo** — Validation ciblée sur les fichiers modifiés (rapide, avant merge)
-- **audit_opquast** — Audit exhaustif des 245 règles (complet, avec scoring)
+### TypeScript Quality
 
-**Catégories :** Contenus, données personnelles, e-commerce, formulaires, identification, images et médias, internationalisation, liens, navigation, newsletter, présentation, sécurité UX, serveur et performances, structure et code.
+118 points de contrôle en 7 catégories : type safety, config stricte, génériques, patterns async, modules, erreurs, métriques. Notation A à D.
 
-**Base :** [Opquast](https://www.opquast.com/) — le référentiel français de qualité web utilisé par plus de 15 000 professionnels.
+### CSS / Design System
 
-### Couche 3 — Audit offensif (Viper)
+55 points de contrôle pour la maintenabilité, l'accessibilité, et la cohérence du design system.
 
-**Persona :** V.I.P.E.R., hacker éthique certifié (OSCP, OSCE, OSWE, GWAPT).
+### Architecture
 
-**Méthode :** Méthodologie BRIGADE avec 16 agents spécialisés répartis en 3 phases :
+70 points de contrôle pour la structure des modules, le couplage/complexité, et le respect du layering.
 
-1. **Reconnaissance** (5 agents) — Backend, frontend, config, dépendances, données
-2. **Surface d'attaque** (3 agents) — Matrice de contrôles, flux de données, STRIDE
-3. **Vérification d'exploits** (5-6 agents) — Par catégorie OWASP + cloud + supply chain
+### Couverture de tests
 
-**Scoring :** CVSS v4.0 pour chaque finding, mapping MITRE ATT&CK, narratifs d'attaque réalistes.
+68 points de contrôle pour l'inventaire frontend/backend et la qualité des tests par échantillonnage.
 
-**Checklists :**
+### Performance
 
-| Checklist | Tests | Périmètre |
-|-----------|-------|-----------|
-| OWASP WSTG v5 | 100 | Pentest web |
-| Cloud Platform | 80+ | Firebase, GCP, AWS, Azure |
-| Healthcare | 50+ | PHI, chiffrement, données médicales |
-| Scénarios d'attaque | 15+ | Templates PTES, MITRE ATT&CK |
+90 points de contrôle couvrant le frontend, le backend, et l'analyse du build/bundle.
+
+### Dette technique
+
+55 points de contrôle pour le code mort, la santé des dépendances, et les code smells.
+
+### Expert HDS / ISO 27001
+
+200+ points de contrôle répartis en 8 domaines pour préparer la certification : cryptographie, audit trail, contrôle d'accès, classification des données, multi-tenant, résilience, gestion des vulnérabilités, réseau.
+
+### Scan global (`karukia_scan`)
+
+Méta-orchestrateur qui lance les 11 dimensions en parallèle — 1673+ points au total. Produit un scorecard unifié, déduplique les findings, et priorise les corrections.
 
 ---
 
@@ -199,13 +188,14 @@ L'outil `auto` est le point d'entrée principal. L'utilisateur décrit sa demand
 | Feature frontend | Jeffrey → Neo → Opo |
 | Feature backend | Jeffrey → Neo |
 | Correction de bug | Jeffrey → Neo |
-| Audit sécurité | Neo seul |
-| Pentest | Viper seul |
-| Audit qualité | audit_opquast seul |
-| Analyse de risques | ebios_rm_audit seul |
-| Documentation | doc_refactor seul |
-| Infrastructure | terraform_update → Neo |
-| Durcissement | security_hardening → Neo |
+| Audit sécurité | Neo |
+| Pentest | Viper |
+| Audit complet | karukia_scan |
+| Qualité TypeScript | ts_quality |
+| Architecture | archi |
+| Performance | perf |
+| Analyse de risques | ebios_rm_audit |
+| Préparation certification | audit_expert_hds |
 
 ### Utilisation
 
@@ -227,23 +217,17 @@ L'outil `auto` est le point d'entrée principal. L'utilisateur décrit sa demand
 KARUKIA maintient une mémoire structurée entre les sessions :
 
 ```
-KARUKIA/
-└── memory/
-    ├── INDEX.md              — Index des sessions
-    ├── sessions/             — Une session par tâche
-    │   └── YYYY-MM-DD_xxx/
-    │       ├── task_plan.md  — Plan et objectifs
-    │       ├── findings.md   — Découvertes
-    │       ├── progress.md   — Journal de progression
-    │       └── context.json  — Contexte machine-readable
-    ├── knowledge/
-    │   ├── patterns.md       — Patterns récurrents du projet
-    │   └── lessons.md        — Leçons apprises
-    └── config/
-        └── security-scope.md — Frameworks et contraintes actives
+karukia/
+├── config/
+│   └── security-scope.md     — Frameworks et contraintes actives
+├── memory/
+│   ├── sessions/             — Une session par tâche
+│   └── references/           — Patterns, leçons, plans de durcissement
+└── trackers/
+    └── KARUKIA-TRACKER.json  — Tracker unifié (toutes les dimensions)
 ```
 
-Cela permet à KARUKIA de **capitaliser** sur les sessions précédentes : patterns détectés, leçons apprises, décisions architecturales documentées.
+Le `KARUKIA-TRACKER.json` trace les chantiers d'amélioration sur toutes les dimensions : sécurité, qualité, TypeScript, CSS, architecture, tests, performance et dette. Chaque skill lit et met à jour sa section automatiquement.
 
 ---
 
@@ -263,7 +247,8 @@ Obtenir une certification HDS, ISO 27001 ou SOC 2 est coûteux — non pas parce
 | Cartographie des risques | Rapport EBIOS RM (5 ateliers ANSSI) |
 | Politique de sécurité technique | `security-scope.md` généré par `install` |
 | Conformité par framework | Rapports Neo (HDS, ISO, SOC 2, PCI-DSS…) |
-| Historique des corrections | Mémoire structurée inter-sessions |
+| Audit niveau expert | `audit_expert_hds` — 8 domaines, 200+ points |
+| Rapport de changements | `change_report` — ISO 27001 A.8.32 |
 | Pentest documenté | Rapport Viper avec scoring CVSS v4 + MITRE ATT&CK |
 
 ### Pourquoi KARUKIA est différent des autres outils
@@ -271,6 +256,7 @@ Obtenir une certification HDS, ISO 27001 ou SOC 2 est coûteux — non pas parce
 | Critère | Outils d'audit génériques | KARUKIA |
 |---------|--------------------------|---------|
 | Couverture frameworks | Un framework à la fois | 6 frameworks + EBIOS RM en un seul outil |
+| Dimensions couvertes | 1 (sécurité) | 11 (sécurité à architecture) |
 | Construction de preuves | Snapshots manuels | Mémoire structurée inter-sessions |
 | Cycle complet | Audit seul | Code → Sécurité → Qualité → Pentest |
 | Origine | Théorique | Né d'une vraie certification HDS/ISO 27001 |
@@ -295,7 +281,7 @@ KARUKIA est né de l'expérience de sécurisation d'un SaaS de santé en vue des
 ### Application de santé — certification HDS
 
 1. `karukia install` — détecte les données de santé, active HDS 2.0
-2. `karukia neo` avec frameworks HDS + ISO 27001 — audit défensif
+2. `karukia audit_expert_hds` — audit expert 8 domaines
 3. `karukia viper` — pentest offensif spécifique santé
 4. `karukia ebios_rm_audit` — analyse de risques formelle ANSSI
 5. Documentation complète pour le dossier de certification
@@ -305,7 +291,7 @@ KARUKIA est né de l'expérience de sécurisation d'un SaaS de santé en vue des
 1. `karukia install` sur le projet partagé
 2. Les développeurs utilisent `karukia: [tâche]` au quotidien
 3. Chaque feature passe par Jeffrey → Neo → Opo automatiquement
-4. Les audits complets (`neo`, `viper`, `audit_opquast`) sont lancés périodiquement
+4. `karukia_scan` lancé périodiquement pour un bilan global sur les 11 dimensions
 
 ---
 
@@ -336,7 +322,8 @@ Un serveur KARUKIA géré permet à toute une équipe de se connecter via une cl
 
 | Critère | IA générique | KARUKIA |
 |---------|-------------|---------|
-| Méthodologie | Improvisée | 935+ contrôles documentés |
+| Méthodologie | Improvisée | 1673+ contrôles documentés |
+| Dimensions couvertes | 1 (ce qu'on demande) | 11 (sécurité à architecture) |
 | Reproductibilité | Variable | Déterministe (mêmes checklists) |
 | Traçabilité | Aucune | Findings avec fichier:ligne |
 | Conformité | Impossible à prouver | Rapports par framework |

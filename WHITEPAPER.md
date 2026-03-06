@@ -1,8 +1,8 @@
 # KARUKIA — Whitepaper
 
-**AI-assisted development methodology: security, quality and pentesting via the MCP protocol.**
+**AI-assisted development methodology: 11 audit dimensions via the MCP protocol.**
 
-*Document in English. Version française : [LIVRE-BLANC.md](./LIVRE-BLANC.md)*
+*Version 3.0 — Document in English. Version française : [LIVRE-BLANC.md](./LIVRE-BLANC.md)*
 
 ```
 ██╗  ██╗ █████╗ ██████╗ ██╗   ██╗██╗  ██╗    ██╗ █████╗
@@ -26,6 +26,7 @@ AI assistants (Claude, GPT, Copilot) are powerful but generic. When asked for a 
 - No traceability: impossible to prove a control was performed
 - No reproducibility: two audits of the same code yield different results
 - Zero compliance: frameworks (ISO 27001, SOC 2, HDS) require formal evidence
+- No coverage beyond security: TypeScript quality, architecture, performance, and technical debt are invisible
 
 ## 2. The KARUKIA Solution
 
@@ -70,9 +71,9 @@ No account, no API key, no data sent externally. The server runs locally on the 
 ```
 Developer <-> AI Client <-> [stdio] <-> KARUKIA MCP Server (local)
                                             |
-                                            ├── 11 skills (prompt builders)
-                                            ├── 24 checklists (935+ points)
-                                            └── Memory system (sessions, knowledge)
+                                            ├── 20 skills (prompt builders)
+                                            ├── 31 checklists (1673+ points)
+                                            └── Memory system (sessions, trackers)
 ```
 
 The server communicates via **stdio** (standard input/output). No network port opened, no HTTP calls. Everything stays on the local machine.
@@ -88,7 +89,7 @@ Team <-> AI Clients <-> [HTTPS] <-> KARUKIA MCP Server (Cloud Run)
                                         └── Same engine, same checklists
 ```
 
-For team deployments, KARUKIA supports a **streamable HTTP** transport deployable on your own infrastructure (Cloud Run, Kubernetes, VM). Bearer token authentication, structured logs, rate limiting.
+For team deployments, KARUKIA supports a **streamable HTTP** transport. Bearer token authentication, structured logs, rate limiting.
 
 ### What the server returns
 
@@ -97,11 +98,11 @@ Each MCP tool returns a **monolithic prompt** — a single text block containing
 Simplified example for `neo` (security audit):
 
 ```
-[GUARD v2 — non-negotiable obligations]
+[GUARD — non-negotiable obligations]
 +
 [Neo persona — identity, style, expertise]
 +
-[Workflow — 5 mandatory steps]
+[Workflow — mandatory steps]
 +
 [OWASP checklist — 62 inline controls]
 +
@@ -110,29 +111,13 @@ Simplified example for `neo` (security audit):
 [Output template — table format + verdict]
 ```
 
-Typical skill prompt size: 15-40 KB depending on active checklists.
-
 ---
 
-## 4. The Three Audit Layers
+## 4. The 11 Audit Dimensions
 
-### Layer 1 — Defensive Audit (Neo)
+### Security — Defensive (Neo)
 
-```
-  ╔═══════════════════════════════════════════════════════╗
-  ║    ●─────────────────────────────────────────●       ║
-  ║    │   ◉               N E O               ◉ │       ║
-  ║    │        Auditeur Cybersécurité            │       ║
-  ║    ●─────────────────────────────────────────●       ║
-  ║   OWASP · HDS · ISO 27001 · SOC 2 · PCI · HIPAA     ║
-  ╚═══════════════════════════════════════════════════════╝
-```
-
-**Persona:** Neo, senior cybersecurity auditor.
-
-**Method:** Point-by-point verification of each applicable control. Every finding must cite the file and line. Every verdict is either COMPLIANT or NON-COMPLIANT with evidence.
-
-**Supported frameworks:**
+Point-by-point audit against 6 compliance frameworks. Every finding cites file:line. Every verdict is COMPLIANT or NON-COMPLIANT with evidence.
 
 | Framework | Controls | Scope |
 |-----------|----------|-------|
@@ -143,54 +128,53 @@ Typical skill prompt size: 15-40 KB depending on active checklists.
 | PCI-DSS v4.0 | 97 | Payment processing |
 | HIPAA | 67 | Health data (US) |
 
-**Output:** Findings table with severity (CRITICAL / MAJOR / MINOR / INFO), checklist reference, file:line, and overall verdict APPROVED or REJECTED.
+### Quality — Web (Opquast)
 
-**Chain:** Neo is systematically called after Jeffrey (implementation) to validate the security of produced code. If Neo rejects, Jeffrey fixes — maximum 3 iteration loop.
+245 rules across 14 categories. Two modes: targeted validation (`opo`, before merge) or exhaustive audit (`audit_opquast`).
 
-### Layer 2 — Quality Audit (Opo / Opquast)
+Based on [Opquast](https://www.opquast.com/) — the French web quality reference.
 
-**Persona:** Opo, web quality guardian.
+### Offensive (Viper)
 
-**Method:** Verification of 245 Opquast v5.0 rules across 14 thematic categories. Two modes:
+BRIGADE methodology with 16 specialized agents. CVSS v4.0 scoring, MITRE ATT&CK mapping, realistic attack narratives. Web, cloud, and healthcare-specific testing.
 
-- **opo** — Targeted validation on modified files (fast, before merge)
-- **audit_opquast** — Exhaustive audit of all 245 rules (complete, with scoring)
+### TypeScript Quality
 
-**Categories:** Content, personal data, e-commerce, forms, identification, images and media, internationalization, links, navigation, newsletter, presentation, security UX, server and performance, structure and code.
+118 checkpoints across 7 categories: type safety, strict configuration, generics, async patterns, modules, errors, and measurable metrics. Grade A-D scoring.
 
-**Based on:** [Opquast](https://www.opquast.com/) — the French web quality reference used by 15,000+ professionals.
+### CSS / Design System
 
-### Layer 3 — Offensive Audit (Viper)
+55 checkpoints for maintainability, accessibility, and design system consistency.
 
-**Persona:** V.I.P.E.R., certified ethical hacker (OSCP, OSCE, OSWE, GWAPT).
+### Architecture
 
-**Method:** BRIGADE methodology with 16 specialized agents across 3 phases:
+70 checkpoints for module structure, coupling/complexity analysis, and architectural layering.
 
-1. **Reconnaissance** (5 agents) — Backend, frontend, config, deps, data
-2. **Attack surface** (3 agents) — Control matrix, data flow, STRIDE
-3. **Exploit verification** (5-6 agents) — Per OWASP category + cloud + supply chain
+### Test Coverage
 
-**Scoring:** CVSS v4.0 for each finding, MITRE ATT&CK mapping, realistic attack narratives.
+68 checkpoints for frontend and backend test inventory and quality sampling.
 
-**Checklists:**
+### Performance
 
-| Checklist | Tests | Scope |
-|-----------|-------|-------|
-| OWASP WSTG v5 | 100 | Web penetration testing |
-| Cloud Platform | 80+ | Firebase, GCP, AWS, Azure |
-| Healthcare | 50+ | PHI, encryption, medical data |
-| Attack Scenarios | 15+ | PTES templates, MITRE ATT&CK |
+90 checkpoints across frontend performance, backend optimization, and build/bundle analysis.
+
+### Technical Debt
+
+55 checkpoints for dead code detection, dependency health, and code smell identification.
+
+### Expert HDS / ISO 27001
+
+200+ checkpoints across 8 specialized domains for certification readiness: cryptography, audit trail, access control, data classification, multi-tenancy, resilience, vulnerability management, and network security.
+
+### Global Scan (`karukia_scan`)
+
+Meta-orchestrator that runs all 11 dimensions in parallel — 1673+ total checkpoints. Produces a unified scorecard, deduplicates findings, and prioritizes remediation.
 
 ---
 
 ## 5. The Orchestrator (Auto)
 
-The `auto` tool is the main entry point. The user describes their request in natural language, and the orchestrator:
-
-1. **Analyzes** the request (type, scope, complexity)
-2. **Routes** to the correct skill chain
-3. **Manages the rejection loop** (if Neo rejects, Jeffrey fixes, max 3 iterations)
-4. **Consolidates** the final report
+The `auto` tool is the main entry point. The user describes their request in natural language, and the orchestrator routes to the right skill chain automatically.
 
 ### Routing table
 
@@ -198,27 +182,14 @@ The `auto` tool is the main entry point. The user describes their request in nat
 |-------------|-------------|
 | Frontend feature | Jeffrey → Neo → Opo |
 | Backend feature | Jeffrey → Neo |
-| Bug fix | Jeffrey → Neo |
-| Security audit | Neo only |
-| Pentest | Viper only |
-| Quality audit | audit_opquast only |
-| Risk analysis | ebios_rm_audit only |
-| Documentation | doc_refactor only |
-| Infrastructure | terraform_update → Neo |
-| Hardening | security_hardening → Neo |
-
-### Usage
-
-```
-"karukia: add user authentication"
-    → Jeffrey implements → Neo validates security → Opo checks quality
-
-"karukia: audit the security of my project"
-    → Neo audits point by point → structured report
-
-"karukia: run a pentest"
-    → Viper deploys 16 agents → CVSS scoring → attack narratives
-```
+| Security audit | Neo |
+| Pentest | Viper |
+| Full audit | karukia_scan |
+| TypeScript review | ts_quality |
+| Architecture review | archi |
+| Performance audit | perf |
+| Risk analysis | ebios_rm_audit |
+| Certification prep | audit_expert_hds |
 
 ---
 
@@ -227,35 +198,27 @@ The `auto` tool is the main entry point. The user describes their request in nat
 KARUKIA maintains a structured memory across sessions:
 
 ```
-KARUKIA/
-└── memory/
-    ├── INDEX.md              — Session index
-    ├── sessions/             — One session per task
-    │   └── YYYY-MM-DD_xxx/
-    │       ├── task_plan.md  — Plan and objectives
-    │       ├── findings.md   — Discoveries
-    │       ├── progress.md   — Progress log
-    │       └── context.json  — Machine-readable context
-    ├── knowledge/
-    │   ├── patterns.md       — Recurring project patterns
-    │   └── lessons.md        — Lessons learned
-    └── config/
-        └── security-scope.md — Active frameworks and constraints
+karukia/
+├── config/
+│   └── security-scope.md     — Active frameworks and constraints
+├── memory/
+│   ├── sessions/             — One directory per task session
+│   └── references/           — Patterns, lessons, hardening plans
+└── trackers/
+    └── KARUKIA-TRACKER.json  — Unified chantier tracker (all dimensions)
 ```
 
-This allows KARUKIA to **capitalize** on previous sessions: detected patterns, lessons learned, documented architectural decisions.
+The `KARUKIA-TRACKER.json` file tracks improvement chantiers (tasks) across all 11 dimensions: security, quality, TypeScript, CSS, architecture, tests, performance, and debt. Each skill reads and updates its section automatically.
 
 ---
 
 ## 7. For Regulated Industries
 
-### The Real Cost of Certification
+### KARUKIA Does Not Replace the Auditor
 
-Obtaining HDS, ISO 27001, or SOC 2 certification is expensive — not because auditors are incompetent, but because **documentation is missing on audit day**. Evidence is scattered across Jira tickets, emails, and unstructured commits. Fixes were applied in a rush, with no traceability.
+KARUKIA prepares the evidence dossier so that when the auditor arrives, everything is already structured and traced.
 
-**KARUKIA does not replace the human auditor. It prepares the evidence dossier.**
-
-### What KARUKIA Produces for Your Certification
+### What KARUKIA Generates
 
 | Auditor's Requirement | What KARUKIA Generates |
 |----------------------|------------------------|
@@ -263,18 +226,9 @@ Obtaining HDS, ISO 27001, or SOC 2 certification is expensive — not because au
 | Risk mapping | EBIOS RM report (5 ANSSI workshops) |
 | Technical security policy | `security-scope.md` generated by `install` |
 | Per-framework compliance | Neo reports (HDS, ISO, SOC 2, PCI-DSS…) |
-| Remediation history | Structured cross-session memory |
+| Certification-level audit | `audit_expert_hds` — 8 domains, 200+ checkpoints |
+| Change management | `change_report` — ISO 27001 A.8.32 compliance |
 | Documented pentest | Viper report with CVSS v4 + MITRE ATT&CK |
-
-### Why KARUKIA Is Different
-
-| Criterion | Generic Audit Tools | KARUKIA |
-|-----------|---------------------|---------|
-| Framework coverage | One at a time | 6 frameworks + EBIOS RM in one tool |
-| Evidence building | Manual snapshots | Structured cross-session memory |
-| Full cycle | Audit only | Code → Security → Quality → Pentest |
-| Origin | Theoretical | Built from a real HDS/ISO 27001 certification |
-| Web quality | Absent | 245 Opquast rules (French web quality standard) |
 
 ### Built from Real Experience
 
@@ -286,17 +240,16 @@ KARUKIA was built from the experience of securing a healthcare SaaS application 
 
 ### SaaS Startup — SOC 2 compliance
 
-1. `karukia install` — detects stack (React + Node.js + PostgreSQL)
-2. `karukia neo` with SOC 2 + OWASP frameworks — full audit
-3. Findings become hardening chantiers
-4. `karukia jeffrey` implements fixes → Neo revalidates
-5. Exportable report for the SOC 2 auditor
+1. `karukia install` — detects stack, generates config
+2. `karukia neo` with SOC 2 + OWASP — full defensive audit
+3. `karukia jeffrey` implements fixes → Neo revalidates
+4. Exportable report for the SOC 2 auditor
 
 ### Healthcare Application — HDS certification
 
 1. `karukia install` — detects health data, activates HDS 2.0
-2. `karukia neo` with HDS + ISO 27001 frameworks — defensive audit
-3. `karukia viper` — healthcare-specific offensive pentest
+2. `karukia audit_expert_hds` — 8-domain expert audit
+3. `karukia viper` — healthcare-specific pentest
 4. `karukia ebios_rm_audit` — formal ANSSI risk analysis
 5. Complete documentation for the certification dossier
 
@@ -305,7 +258,7 @@ KARUKIA was built from the experience of securing a healthcare SaaS application 
 1. `karukia install` on the shared project
 2. Developers use `karukia: [task]` daily
 3. Every feature goes through Jeffrey → Neo → Opo automatically
-4. Full audits (`neo`, `viper`, `audit_opquast`) are run periodically
+4. `karukia_scan` runs periodically for a global health check
 
 ---
 
@@ -321,14 +274,13 @@ Each developer runs the server locally via `npx`. Zero infrastructure, zero cost
 
 ### Team — Managed server (waitlist)
 
-A managed KARUKIA server allows an entire team to connect via a single API key:
+A managed KARUKIA server connects an entire team via a single API key:
 
 - **Consistency** — same checklists for all developers
-- **Centralized audit trail** — Pino JSON structured logs
+- **Centralized audit trail** — structured logs
 - **Access control** — per-team bearer token
-- **Availability** — no dependency on a local machine
 
-> This mode is under development. Join the waitlist: **contact@karukia.com**
+> Join the waitlist: **contact@karukia.com**
 
 ---
 
@@ -336,7 +288,8 @@ A managed KARUKIA server allows an entire team to connect via a single API key:
 
 | Criteria | Generic AI | KARUKIA |
 |----------|-----------|---------|
-| Methodology | Improvised | 935+ documented controls |
+| Methodology | Improvised | 1673+ documented controls |
+| Dimensions covered | 1 (whatever you ask) | 11 (security to architecture) |
 | Reproducibility | Variable | Deterministic (same checklists) |
 | Traceability | None | Findings with file:line |
 | Compliance | Impossible to prove | Per-framework reports |

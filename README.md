@@ -12,9 +12,9 @@
 
 **The complete AI-assisted development methodology, delivered via MCP.**
 
-**Latest: v1.2.6**
+**Latest: v3.0**
 
-21 tools, 11 skills, 935+ security/quality/pentest checkpoints. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
+27 tools, 20 skills, 1673+ checkpoints across 11 audit dimensions. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
 
 ## What is KARUKIA?
 
@@ -29,12 +29,20 @@ You: "Run a security audit"
   -> AI becomes Neo, follows the methodology, produces structured findings
 ```
 
-## The Three Layers
+## The 11 Audit Dimensions
 
 ```
-Layer 1 - DEFENSIVE (Neo)     445 controls   "Is my code secure?"
-Layer 2 - QUALITY (Opquast)   245 rules      "Is my app well-built?"
-Layer 3 - OFFENSIVE (Viper)   245 tests      "How would a hacker break in?"
+SECURITY  → Neo (445 pts)      "Is my code secure?"
+QUALITY   → Opquast (245 pts)  "Is my app well-built?"
+OFFENSIVE → Viper (245+ tests) "How would a hacker break in?"
+TS        → ts_quality (118)   "Is my TypeScript clean?"
+CSS       → css_quality (55)   "Is my design system maintainable?"
+ARCHI     → archi (70)         "Is my architecture sound?"
+TESTS     → test_coverage (68) "Am I testing the right things?"
+PERF      → perf (90)          "Where are the bottlenecks?"
+DEBT      → debt (55)          "What's slowing us down?"
+HDS/ISO   → audit_expert (200+)"Am I ready for certification?"
+SCAN      → karukia_scan       "Run all 11 dimensions at once"
 ```
 
 ---
@@ -62,7 +70,7 @@ Create or edit `.mcp.json` at the root of your project:
 
 ### Step 2 — Restart your AI client
 
-Restart Claude Code (`/quit` then relaunch) or your IDE. The 21 KARUKIA tools are now available.
+Restart Claude Code (`/quit` then relaunch) or your IDE. The 27 KARUKIA tools are now available.
 
 > On first launch, `npx` downloads the package automatically (~175 KB). Subsequent launches use the cached version.
 
@@ -120,7 +128,7 @@ Then add to your global AI config (`~/.claude.json` for Claude Code):
 
 ---
 
-## 21 Tools
+## 27 Tools
 
 ### Essential (start here)
 
@@ -130,7 +138,7 @@ Then add to your global AI config (`~/.claude.json` for Claude Code):
 | `auto` | **[MAIN TOOL]** Describe what you need — KARUKIA routes to the right skills |
 | `start` | Quick-start guide — explains all skills at 3 progressive levels |
 
-### 11 Skills (AI Personas)
+### Core Skills (AI Personas)
 
 Each skill returns a complete prompt that transforms your AI into a specialist.
 
@@ -146,28 +154,39 @@ Each skill returns a complete prompt that transforms your AI into a specialist.
 | `terraform_update` | IaC Specialist | Terraform automation for KMS, GCS, IAM |
 | `doc_refactor` | Doc Auditor | Documentation accuracy audit vs actual code |
 
-### 5 Utilities
+### Dimensional Skills (v3.0 New)
+
+| Tool | Checkpoints | What it does |
+|------|-------------|-------------|
+| `ts_quality` | 118 | TypeScript audit — type safety, strict config, generics, async patterns |
+| `css_quality` | 55 | CSS/Design System — maintainability, accessibility, metrics |
+| `archi` | 70 | Architecture — module structure, coupling, layering |
+| `test_coverage` | 68 | Test inventory — frontend/backend coverage quality |
+| `perf` | 90 | Performance — frontend, backend, build/bundle |
+| `debt` | 55 | Technical debt — dead code, dependency health, code smells |
+| `karukia_scan` | 1673+ | **Global scan** — all 11 dimensions in parallel |
+| `audit_expert_hds` | 200+ | Expert HDS 2.0/ISO 27001 — 8 domains, certification readiness |
+| `change_report` | — | Change management report (ISO 27001 A.8.32) |
+
+### Utilities
 
 | Tool | Description |
 |------|-------------|
-| `list_checklists` | Browse all 24 checklists by category |
-| `get_checklist` | Retrieve the full content of any checklist |
-| `search_rules` | Search across all 935+ checkpoints by keyword and severity |
+| `list_checklists` | Browse all 31 checklists by category |
 | `suggest_checklists` | Describe your project — get a prioritized audit plan |
 | `generate_report` | Compile audit results into a scored Markdown report |
 
-### 4 Memory & Config
+### Memory & Config
 
 | Tool | Description |
 |------|-------------|
 | `init_memory` | Initialize KARUKIA memory structure in a project |
 | `get_session_template` | Get pre-filled session templates for any skill |
 | `get_config_template` | Get configuration templates (security scope, CLAUDE.md, analytics) |
-| `get_shared` | Access shared methodology components (guard rules, workflow, agents) |
 
 ---
 
-## 24 Checklists
+## 31 Checklists
 
 ### Defensive Security (Neo) — 6 checklists, 445 controls
 
@@ -194,6 +213,18 @@ Based on [Opquast](https://www.opquast.com/) — the French web quality referenc
 | **Cloud Platform** | 80+ | Firebase, GCP, AWS, Azure |
 | **Healthcare** | 50+ | PHI, encryption, medical data |
 | **Attack Scenarios** | 15+ | PTES templates, MITRE ATT&CK |
+
+### Dimensional Quality (New in v3.0) — 7 checklists, 656+ checkpoints
+
+| Checklist | Points | Scope |
+|-----------|--------|-------|
+| **TypeScript Quality** | 118 | Type safety, strict config, patterns |
+| **CSS / Design System** | 55 | Maintainability, a11y, metrics |
+| **Architecture** | 70 | Module structure, coupling, layering |
+| **Test Coverage** | 68 | Frontend/backend inventory, quality |
+| **Performance** | 90 | Frontend, backend, build/bundle |
+| **Technical Debt** | 55 | Dead code, deps, code smells |
+| **Expert HDS/ISO 27001** | 200+ | Certification readiness — 8 domains |
 
 ---
 
@@ -257,7 +288,7 @@ Built from the experience of securing a healthcare SaaS application for HDS 2.0 
 KARUKIA is a structured AI-assisted development methodology built around three principles:
 
 1. **Separation of concerns** — Security, quality, and implementation are separate disciplines handled by separate AI personas.
-2. **Formal checkpoints over gut feeling** — 935 documented checkpoints beat "I think it's fine."
+2. **Formal checkpoints over gut feeling** — 1673+ documented checkpoints beat "I think it's fine."
 3. **Defense in depth** — Defensive audit first, quality validation second, offensive testing last.
 
 Built from real-world experience securing a healthcare SaaS application to HDS 2.0 / ISO 27001 standards.

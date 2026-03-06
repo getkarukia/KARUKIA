@@ -12,9 +12,9 @@
 
 **La méthodologie complète de développement assistée par IA, livrée via MCP.**
 
-**Dernière version : v1.2.6** — Avatars terminaux pour Neo & Jeffrey + enrichissements docs.
+**Dernière version : v3.0** — 11 dimensions d'audit, 9 nouveaux skills dimensionnels, scan global.
 
-21 outils, 11 skills, 935+ points de contrôle sécurité / qualité / pentest. Compatible avec n'importe quelle plateforme IA (Claude Code, Cursor, Windsurf, Copilot…) via le Model Context Protocol.
+27 outils, 20 skills, 1673+ points de contrôle sur 11 dimensions. Compatible avec n'importe quelle plateforme IA (Claude Code, Cursor, Windsurf, Copilot…) via le Model Context Protocol.
 
 *English version: [README.md](./README.md)*
 
@@ -35,12 +35,20 @@ Toi : « Audite la sécurité de mon projet »
 
 ---
 
-## Les trois couches
+## Les 11 dimensions d'audit
 
 ```
-Couche 1 — DÉFENSIF (Neo)     445 contrôles   « Mon code est-il sécurisé ? »
-Couche 2 — QUALITÉ (Opquast)  245 règles      « Mon app est-elle bien construite ? »
-Couche 3 — OFFENSIF (Viper)   245 tests       « Comment un attaquant pourrait-il entrer ? »
+SÉCURITÉ  → Neo (445 pts)       « Mon code est-il sécurisé ? »
+QUALITÉ   → Opquast (245 pts)   « Mon app est-elle bien construite ? »
+OFFENSIF  → Viper (245+ tests)  « Comment un attaquant entrerait-il ? »
+TS        → ts_quality (118)    « Mon TypeScript est-il propre ? »
+CSS       → css_quality (55)    « Mon design system est-il maintenable ? »
+ARCHI     → archi (70)          « Mon architecture est-elle saine ? »
+TESTS     → test_coverage (68)  « Est-ce que je teste les bons trucs ? »
+PERF      → perf (90)           « Où sont les goulots d'étranglement ? »
+DETTE     → debt (55)           « Qu'est-ce qui nous ralentit ? »
+HDS/ISO   → audit_expert (200+) « Suis-je prêt pour la certification ? »
+SCAN      → karukia_scan        « Lancer les 11 dimensions en parallèle »
 ```
 
 ---
@@ -68,7 +76,7 @@ Crée ou édite `.mcp.json` à la racine de ton projet :
 
 ### Étape 2 — Redémarre ton client IA
 
-Redémarre Claude Code (`/quit` puis relance) ou ton IDE. Les 21 outils KARUKIA sont désormais disponibles.
+Redémarre Claude Code (`/quit` puis relance) ou ton IDE. Les 27 outils KARUKIA sont désormais disponibles.
 
 > Au premier lancement, `npx` télécharge le package automatiquement (~175 Ko). Les lancements suivants utilisent la version en cache.
 
@@ -126,7 +134,7 @@ Puis ajoute à ta config IA globale (`~/.claude.json` pour Claude Code) :
 
 ---
 
-## 21 Outils
+## 27 Outils
 
 ### Essentiels (commence ici)
 
@@ -136,7 +144,7 @@ Puis ajoute à ta config IA globale (`~/.claude.json` pour Claude Code) :
 | `auto` | **[OUTIL PRINCIPAL]** Décris ce que tu veux — KARUKIA route vers les bons skills |
 | `start` | Guide de démarrage — explique tous les skills à 3 niveaux progressifs |
 
-### 11 Skills (Personas IA)
+### Skills core (Personas IA)
 
 Chaque skill retourne un prompt complet qui transforme ton IA en spécialiste.
 
@@ -152,28 +160,39 @@ Chaque skill retourne un prompt complet qui transforme ton IA en spécialiste.
 | `terraform_update` | Spécialiste IaC | Automatisation Terraform pour KMS, GCS, IAM |
 | `doc_refactor` | Auditeur Doc | Audit de précision documentation vs code réel |
 
-### 5 Utilitaires
+### Skills dimensionnels (nouveau en v3.0)
+
+| Outil | Points | Ce qu'il fait |
+|-------|--------|---------------|
+| `ts_quality` | 118 | TypeScript — type safety, config stricte, patterns async |
+| `css_quality` | 55 | CSS/Design System — maintenabilité, accessibilité, métriques |
+| `archi` | 70 | Architecture — structure modules, couplage, layering |
+| `test_coverage` | 68 | Tests — inventaire frontend/backend, qualité échantillons |
+| `perf` | 90 | Performance — frontend, backend, build/bundle |
+| `debt` | 55 | Dette technique — code mort, dépendances, code smells |
+| `karukia_scan` | 1673+ | **Scan global** — les 11 dimensions en parallèle |
+| `audit_expert_hds` | 200+ | Expert HDS 2.0/ISO 27001 — 8 domaines, préparation certification |
+| `change_report` | — | Rapport de changements ISO 27001 A.8.32 |
+
+### Utilitaires
 
 | Outil | Description |
 |-------|-------------|
-| `list_checklists` | Parcourir les 24 checklists par catégorie |
-| `get_checklist` | Récupérer le contenu complet d'une checklist |
-| `search_rules` | Chercher parmi les 935+ points par mot-clé et sévérité |
+| `list_checklists` | Parcourir les 31 checklists par catégorie |
 | `suggest_checklists` | Décrire ton projet — obtenir un plan d'audit priorisé |
 | `generate_report` | Compiler les résultats d'audit en rapport Markdown scoré |
 
-### 4 Mémoire & Config
+### Mémoire & Config
 
 | Outil | Description |
 |-------|-------------|
 | `init_memory` | Initialiser la structure mémoire KARUKIA dans un projet |
 | `get_session_template` | Obtenir des templates de session pré-remplis pour chaque skill |
 | `get_config_template` | Obtenir des templates de configuration (scope sécurité, CLAUDE.md) |
-| `get_shared` | Accéder aux composants méthodologiques partagés |
 
 ---
 
-## 24 Checklists
+## 31 Checklists
 
 ### Sécurité défensive (Neo) — 6 checklists, 445 contrôles
 
@@ -200,6 +219,18 @@ Basé sur [Opquast](https://www.opquast.com/) — le référentiel français de 
 | **Cloud Platform** | 80+ | Firebase, GCP, AWS, Azure |
 | **Healthcare** | 50+ | PHI, chiffrement, données médicales |
 | **Scénarios d'attaque** | 15+ | Templates PTES, MITRE ATT&CK |
+
+### Qualité dimensionnelle (nouveau en v3.0) — 7 checklists, 656+ points
+
+| Checklist | Points | Périmètre |
+|-----------|--------|-----------|
+| **TypeScript Quality** | 118 | Type safety, config stricte, patterns |
+| **CSS / Design System** | 55 | Maintenabilité, accessibilité, métriques |
+| **Architecture** | 70 | Structure modules, couplage, layering |
+| **Test Coverage** | 68 | Inventaire frontend/backend, qualité |
+| **Performance** | 90 | Frontend, backend, build/bundle |
+| **Technical Debt** | 55 | Code mort, dépendances, code smells |
+| **Expert HDS/ISO 27001** | 200+ | Préparation certification — 8 domaines |
 
 ---
 
