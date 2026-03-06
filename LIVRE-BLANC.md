@@ -332,7 +332,7 @@ KARUKIA est né du développement d'un SaaS de santé en cours de préparation p
 
 KARUKIA MCP est **gratuit pour usage personnel et éducatif**. Aucun compte requis.
 
-Pour un usage commercial, contactez **KARUKIA Solutions** : contact@karukia.com
+Pour toute utilisation commerciale, contactez **KARUKIA Solutions** — contact@karukia.com
 
 **npm :** [karukia-mcp](https://www.npmjs.com/package/karukia-mcp)
 

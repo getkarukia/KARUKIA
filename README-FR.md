@@ -297,6 +297,6 @@ Le projet est construit autour de trois principes :
 
 KARUKIA MCP est **gratuit pour usage personnel et éducatif**.
 
-Pour un usage commercial, contactez **KARUKIA Solutions** : contact@karukia.com
+Pour toute utilisation commerciale, contactez **KARUKIA Solutions** — contact@karukia.com
 
 Voir [LICENSE](./LICENSE) pour les conditions complètes.

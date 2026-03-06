@@ -299,7 +299,7 @@ KARUKIA was built while developing a healthcare SaaS application targeting HDS 2
 
 KARUKIA MCP is **free for personal and educational use**. No account required.
 
-For commercial use, contact **KARUKIA Solutions**: contact@karukia.com
+For commercial use, contact **KARUKIA Solutions** — contact@karukia.com
 
 **npm:** [karukia-mcp](https://www.npmjs.com/package/karukia-mcp)
 

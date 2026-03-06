@@ -282,6 +282,6 @@ The project is built around three principles:
 
 KARUKIA MCP is **free for personal and educational use**.
 
-For commercial use, contact **KARUKIA Solutions**: contact@karukia.com
+For commercial use, contact **KARUKIA Solutions** — contact@karukia.com
 
 See [LICENSE](./LICENSE) for full terms.
