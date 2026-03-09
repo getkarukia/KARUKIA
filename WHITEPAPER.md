@@ -72,7 +72,7 @@ No account, no API key, no data sent externally. The server runs locally on the 
 Developer <-> AI Client <-> [stdio] <-> KARUKIA MCP Server (local)
                                             |
                                             ├── 20 skills (prompt builders)
-                                            ├── 31 checklists (1673+ points)
+                                            ├── 22 checklists (1797+ points)
                                             └── Memory system (sessions, trackers)
 ```
 
@@ -128,11 +128,11 @@ Point-by-point audit against 6 compliance frameworks. Every finding cites file:l
 | PCI-DSS v4.0 | 97 | Payment processing |
 | HIPAA | 67 | Health data (US) |
 
-### Quality — Web (Opquast)
+### Quality — Web (Certix)
 
-245 rules across 14 categories. Two modes: targeted validation (`opo`, before merge) or exhaustive audit (`audit_opquast`).
+369 rules across 5 profiles (DEV, UX, CONT, OPS, JUR). Two modes: targeted validation (`opo`, before merge) or exhaustive audit (`audit_certix`).
 
-Based on [Opquast](https://www.opquast.com/) — the French open web quality reference (CC-BY-SA), trusted by 19,000+ certified professionals since 2004. We thank Opquast for making their checklist framework publicly available.
+Certix is KARUKIA Solutions' own web quality referential, built for modern web applications.
 
 ### Offensive (Viper)
 
@@ -168,7 +168,7 @@ BRIGADE methodology with 16 specialized agents. CVSS v4.0 scoring, MITRE ATT&CK 
 
 ### Global Scan (`karukia_scan`)
 
-Meta-orchestrator that runs all 11 dimensions in parallel — 1673+ total checkpoints. Produces a unified scorecard, deduplicates findings, and prioritizes remediation.
+Meta-orchestrator that runs all 11 dimensions in parallel — 1797+ total checkpoints. Produces a unified scorecard, deduplicates findings, and prioritizes remediation.
 
 ---
 
@@ -278,7 +278,7 @@ Each developer runs the server locally via `npx`. Zero infrastructure, zero cost
 
 | Criteria | Generic AI | KARUKIA |
 |----------|-----------|---------|
-| Methodology | Improvised | 1673+ documented controls |
+| Methodology | Improvised | 1797+ documented controls |
 | Dimensions covered | 1 (whatever you ask) | 11 (security to architecture) |
 | Reproducibility | Variable | Deterministic (same checklists) |
 | Traceability | None | Findings with file:line |

@@ -14,7 +14,7 @@
 
 **Dernière version : v3.0.5** — 11 dimensions d'audit, 9 nouveaux skills dimensionnels, scan global.
 
-26 outils, 19 skills, 1673+ points de contrôle sur 11 dimensions. Compatible avec n'importe quelle plateforme IA (Claude Code, Cursor, Windsurf, Copilot…) via le Model Context Protocol.
+26 outils, 19 skills, 1797+ points de contrôle sur 11 dimensions. Compatible avec n'importe quelle plateforme IA (Claude Code, Cursor, Windsurf, Copilot…) via le Model Context Protocol.
 
 *English version: [README.md](./README.md)*
 
@@ -44,7 +44,7 @@ Toi : « Audite la sécurité de mon projet »
 
 ```
 SÉCURITÉ  → Neo (445 pts)       « Mon code est-il sécurisé ? »
-QUALITÉ   → Opquast (245 pts)   « Mon app est-elle bien construite ? »
+QUALITÉ   → Certix (369 pts)    « Mon app est-elle bien construite ? »
 OFFENSIF  → Viper (245+ tests)  « Comment un attaquant entrerait-il ? »
 TS        → ts_quality (118)    « Mon TypeScript est-il propre ? »
 CSS       → css_quality (55)    « Mon design system est-il maintenable ? »
@@ -158,8 +158,8 @@ Chaque skill retourne un prompt complet qui transforme ton IA en spécialiste.
 | `neo` | Auditeur Sécurité | Audit défensif contre 6 frameworks (OWASP, HDS, ISO 27001, SOC 2, PCI-DSS, HIPAA) |
 | `viper` | Brigade Pentest | Tests offensifs avec 16 agents, scoring CVSS v4, mapping MITRE ATT&CK |
 | `jeffrey` | Architecte Full-Stack | Implémentation de features avec TDD et validation sécurité |
-| `opo` | Validateur Qualité | Qualité web contre les 245 règles Opquast |
-| `audit_opquast` | Auditeur Qualité | Audit Opquast complet avec 14 checklists thématiques |
+| `opo` | Validateur Qualité | Qualité web contre les 369 règles Certix |
+| `audit_certix` | Auditeur Qualité | Audit Certix complet avec 5 profils |
 | `ebios_rm_audit` | Analyste Risques | Méthodologie EBIOS Risk Manager (ANSSI) — analyse formelle |
 | `security_hardening` | Planificateur Durcissement | Chantiers d'amélioration sécurité |
 | `doc_refactor` | Auditeur Doc | Audit de précision documentation vs code réel |
@@ -174,7 +174,7 @@ Chaque skill retourne un prompt complet qui transforme ton IA en spécialiste.
 | `test_coverage` | 68 | Tests — inventaire frontend/backend, qualité échantillons |
 | `perf` | 90 | Performance — frontend, backend, build/bundle |
 | `debt` | 55 | Dette technique — code mort, dépendances, code smells |
-| `karukia_scan` | 1673+ | **Scan global** — les 11 dimensions en parallèle |
+| `karukia_scan` | 1797+ | **Scan global** — les 11 dimensions en parallèle |
 | `audit_expert_hds` | 200+ | Expert HDS 2.0/ISO 27001 — 8 domaines, préparation certification |
 | `change_report` | — | Rapport de changements ISO 27001 A.8.32 |
 
@@ -182,7 +182,7 @@ Chaque skill retourne un prompt complet qui transforme ton IA en spécialiste.
 
 | Outil | Description |
 |-------|-------------|
-| `list_checklists` | Parcourir les 31 checklists par catégorie |
+| `list_checklists` | Parcourir les 22 checklists par catégorie |
 | `suggest_checklists` | Décrire ton projet — obtenir un plan d'audit priorisé |
 | `generate_report` | Compiler les résultats d'audit en rapport Markdown scoré |
 
@@ -196,7 +196,7 @@ Chaque skill retourne un prompt complet qui transforme ton IA en spécialiste.
 
 ---
 
-## 31 Checklists
+## 22 Checklists
 
 ### Sécurité défensive (Neo) — 6 checklists, 445 contrôles
 
@@ -209,11 +209,11 @@ Chaque skill retourne un prompt complet qui transforme ton IA en spécialiste.
 | **PCI-DSS v4.0** | 97 | Traitement de paiements |
 | **HIPAA** | 67 | Données de santé, US |
 
-### Qualité web (Opquast) — 14 checklists, 245 règles
+### Qualité web (Certix) — 5 profils, 369 règles
 
-Contenus, données personnelles, e-commerce, formulaires, identification, images, internationalisation, liens, navigation, newsletter, présentation, sécurité UX, serveur & performances, structure et code.
+369 règles réparties en 5 profils : DEV (développement), UX (expérience utilisateur), CONT (contenu), OPS (opérations), JUR (juridique/conformité).
 
-Basé sur [Opquast](https://www.opquast.com/) — le référentiel français de qualité web en libre accès (CC-BY-SA), utilisé par plus de 19 000 professionnels certifiés depuis 2004. Merci à Opquast de mettre leur référentiel à disposition de la communauté.
+Certix est le référentiel qualité web propre à KARUKIA Solutions, conçu pour les applications web modernes.
 
 ### Sécurité offensive (Viper) — 4 checklists, 245+ tests
 
@@ -291,7 +291,7 @@ KARUKIA est né du développement d'un SaaS de santé en cours de préparation p
 
 Le projet est construit autour de trois principes :
 1. **Séparation des responsabilités** — Sécurité, qualité et implémentation sont des disciplines distinctes, portées par des personas IA séparés.
-2. **Points de contrôle formels plutôt qu'intuition** — 1673+ points documentés valent mieux qu'un "je pense que c'est bon".
+2. **Points de contrôle formels plutôt qu'intuition** — 1797+ points documentés valent mieux qu'un "je pense que c'est bon".
 3. **Défense en profondeur** — Audit défensif d'abord, validation qualité ensuite, test offensif en dernier.
 
 > *Made in Guadeloupe — L'IA ne remplace pas l'expert, elle le libère.*
@@ -318,7 +318,7 @@ Si votre entreprise ou ESN utilise KARUKIA en production ou le déploie pour ses
 | **Business** | 12 000 EUR | Jusqu'à 50 développeurs |
 | **Enterprise** | 20 000 EUR | Développeurs illimités + support prioritaire |
 
-Toutes les formules incluent : accès complet aux 26 outils, 19 skills, 1673+ points de contrôle sur 11 dimensions d'audit, et toutes les mises à jour pendant la durée de la licence. Licence annuelle, renouvelable.
+Toutes les formules incluent : accès complet aux 26 outils, 19 skills, 1797+ points de contrôle sur 11 dimensions d'audit, et toutes les mises à jour pendant la durée de la licence. Licence annuelle, renouvelable.
 
 **Contact :** contact@karukia.com
 

@@ -14,7 +14,7 @@
 
 **Latest: v3.0.5**
 
-26 tools, 19 skills, 1673+ checkpoints across 11 audit dimensions. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
+26 tools, 19 skills, 1797+ checkpoints across 11 audit dimensions. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
 
 ---
 
@@ -40,7 +40,7 @@ You: "Run a security audit"
 
 ```
 SECURITY  → Neo (445 pts)      "Is my code secure?"
-QUALITY   → Opquast (245 pts)  "Is my app well-built?"
+QUALITY   → Certix (369 pts)   "Is my app well-built?"
 OFFENSIVE → Viper (245+ tests) "How would a hacker break in?"
 TS        → ts_quality (118)   "Is my TypeScript clean?"
 CSS       → css_quality (55)   "Is my design system maintainable?"
@@ -154,8 +154,8 @@ Each skill returns a complete prompt that transforms your AI into a specialist.
 | `neo` | Security Auditor | Defensive audit against 6 frameworks (OWASP, HDS, ISO 27001, SOC 2, PCI-DSS, HIPAA) |
 | `viper` | Pentest Brigade | Offensive testing with 16 agents, CVSS v4 scoring, MITRE ATT&CK mapping |
 | `jeffrey` | Full-Stack Architect | Feature implementation with TDD and security validation |
-| `opo` | Quality Validator | Web quality against 245 Opquast rules |
-| `audit_opquast` | Quality Auditor | Deep Opquast compliance audit with 14 thematic checklists |
+| `opo` | Quality Validator | Web quality against 369 Certix rules |
+| `audit_certix` | Quality Auditor | Deep Certix compliance audit with 5 profiles |
 | `ebios_rm_audit` | Risk Analyst | EBIOS Risk Manager methodology (ANSSI) — formal risk analysis |
 | `security_hardening` | Hardening Planner | Security improvement chantiers |
 | `doc_refactor` | Doc Auditor | Documentation accuracy audit vs actual code |
@@ -170,7 +170,7 @@ Each skill returns a complete prompt that transforms your AI into a specialist.
 | `test_coverage` | 68 | Test inventory — frontend/backend coverage quality |
 | `perf` | 90 | Performance — frontend, backend, build/bundle |
 | `debt` | 55 | Technical debt — dead code, dependency health, code smells |
-| `karukia_scan` | 1673+ | **Global scan** — all 11 dimensions in parallel |
+| `karukia_scan` | 1797+ | **Global scan** — all 11 dimensions in parallel |
 | `audit_expert_hds` | 200+ | Expert HDS 2.0/ISO 27001 — 8 domains, certification readiness |
 | `change_report` | — | Change management report (ISO 27001 A.8.32) |
 
@@ -178,7 +178,7 @@ Each skill returns a complete prompt that transforms your AI into a specialist.
 
 | Tool | Description |
 |------|-------------|
-| `list_checklists` | Browse all 31 checklists by category |
+| `list_checklists` | Browse all 22 checklists by category |
 | `suggest_checklists` | Describe your project — get a prioritized audit plan |
 | `generate_report` | Compile audit results into a scored Markdown report |
 
@@ -192,7 +192,7 @@ Each skill returns a complete prompt that transforms your AI into a specialist.
 
 ---
 
-## 31 Checklists
+## 22 Checklists
 
 ### Defensive Security (Neo) — 6 checklists, 445 controls
 
@@ -205,11 +205,11 @@ Each skill returns a complete prompt that transforms your AI into a specialist.
 | **PCI-DSS v4.0** | 97 | Payment processing |
 | **HIPAA** | 67 | Health data, US |
 
-### Web Quality (Opquast) — 14 checklists, 245 rules
+### Web Quality (Certix) — 5 profiles, 369 rules
 
-Content, personal data, e-commerce, forms, identity, images, internationalization, links, navigation, newsletter, presentation, security UX, server performance, and code structure.
+369 rules across 5 profiles: DEV (development), UX (user experience), CONT (content), OPS (operations), JUR (legal/compliance).
 
-Based on [Opquast](https://www.opquast.com/) — the French open web quality reference (CC-BY-SA), trusted by 19,000+ certified professionals since 2004. We thank Opquast for making their checklist framework publicly available.
+Certix is KARUKIA Solutions' own web quality referential, built for modern web applications.
 
 ### Offensive Security (Viper) — 4 checklists, 245+ tests
 
@@ -277,7 +277,7 @@ KARUKIA was built while developing a healthcare SaaS application for HDS 2.0 and
 
 The project is built around three principles:
 1. **Separation of concerns** — Security, quality, and implementation are separate disciplines handled by separate AI personas.
-2. **Formal checkpoints over gut feeling** — 1673+ documented checkpoints beat "I think it's fine."
+2. **Formal checkpoints over gut feeling** — 1797+ documented checkpoints beat "I think it's fine."
 3. **Defense in depth** — Defensive audit first, quality validation second, offensive testing last.
 
 > *Made in Guadeloupe — AI doesn't replace the expert, it frees them.*
@@ -304,7 +304,7 @@ If your company or consulting firm uses KARUKIA for production work or deploys i
 | **Business** | 12 000 | Up to 50 developers |
 | **Enterprise** | 20 000 | Unlimited developers + priority support |
 
-All plans include: full access to all 26 tools, 19 skills, 1673+ checkpoints across 11 audit dimensions, and all updates for the license duration. Annual license, renewable.
+All plans include: full access to all 26 tools, 19 skills, 1797+ checkpoints across 11 audit dimensions, and all updates for the license duration. Annual license, renewable.
 
 **Contact:** contact@karukia.com
 

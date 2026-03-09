@@ -72,7 +72,7 @@ Aucun compte, aucune clé API, aucune donnée envoyée à l'extérieur. Le serve
 Développeur <-> Client IA <-> [stdio] <-> KARUKIA MCP Server (local)
                                               |
                                               ├── 20 skills (prompt builders)
-                                              ├── 31 checklists (1673+ points)
+                                              ├── 22 checklists (1797+ points)
                                               └── Système de mémoire (sessions, trackers)
 ```
 
@@ -130,9 +130,9 @@ Vérification point par point de chaque contrôle applicable. Chaque finding cit
 
 Neo est systématiquement appelé après Jeffrey (implémentation). Si Neo rejette, Jeffrey corrige — boucle maximum 3 itérations.
 
-### Qualité web (Opquast)
+### Qualité web (Certix)
 
-245 règles Opquast v5.0 en 14 catégories. Deux modes : validation ciblée avant merge (`opo`) ou audit exhaustif (`audit_opquast`). Basé sur [Opquast](https://www.opquast.com/) — le référentiel français de qualité web en libre accès (CC-BY-SA), utilisé par plus de 19 000 professionnels certifiés depuis 2004. Merci à Opquast de mettre leur référentiel à disposition de la communauté.
+369 règles Certix en 5 profils (DEV, UX, CONT, OPS, JUR). Deux modes : validation ciblée avant merge (`opo`) ou audit exhaustif (`audit_certix`). Certix est le référentiel qualité web propre à KARUKIA Solutions, conçu pour les applications web modernes.
 
 ### Sécurité offensive (Viper)
 
@@ -168,7 +168,7 @@ Méthodologie BRIGADE avec 16 agents spécialisés. Scoring CVSS v4.0, mapping M
 
 ### Scan global (`karukia_scan`)
 
-Méta-orchestrateur qui lance les 11 dimensions en parallèle — 1673+ points au total. Produit un scorecard unifié, déduplique les findings, et priorise les corrections.
+Méta-orchestrateur qui lance les 11 dimensions en parallèle — 1797+ points au total. Produit un scorecard unifié, déduplique les findings, et priorise les corrections.
 
 ---
 
@@ -260,7 +260,7 @@ Obtenir une certification HDS, ISO 27001 ou SOC 2 est coûteux — non pas parce
 | Construction de preuves | Snapshots manuels | Mémoire structurée inter-sessions |
 | Cycle complet | Audit seul | Code → Sécurité → Qualité → Pentest |
 | Origine | Théorique | Construit en préparant une vraie certification HDS/ISO 27001 |
-| Qualité web | Absente | 245 règles Opquast (référentiel français) |
+| Qualité web | Absente | 369 règles Certix (référentiel KARUKIA Solutions) |
 
 ### Construit sur le terrain
 
@@ -311,7 +311,7 @@ Chaque développeur installe KARUKIA en local via `npx`. Zéro serveur, zéro in
 
 | Critère | IA générique | KARUKIA |
 |---------|-------------|---------|
-| Méthodologie | Improvisée | 1673+ contrôles documentés |
+| Méthodologie | Improvisée | 1797+ contrôles documentés |
 | Dimensions couvertes | 1 (ce qu'on demande) | 11 (sécurité à architecture) |
 | Reproductibilité | Variable | Déterministe (mêmes checklists) |
 | Traçabilité | Aucune | Findings avec fichier:ligne |
