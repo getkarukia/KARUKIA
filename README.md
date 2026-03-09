@@ -12,7 +12,7 @@
 
 **The complete AI-assisted development methodology, delivered via MCP.**
 
-**Latest: v3.0.5**
+**Latest: v3.0.6**
 
 26 tools, 19 skills, 1797+ checkpoints across 11 audit dimensions. Works with any AI platform (Claude Code, Cursor, Windsurf, Copilot...) through the Model Context Protocol.
 

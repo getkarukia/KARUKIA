@@ -12,7 +12,7 @@
 
 **La méthodologie complète de développement assistée par IA, livrée via MCP.**
 
-**Dernière version : v3.0.5** — 11 dimensions d'audit, 9 nouveaux skills dimensionnels, scan global.
+**Dernière version : v3.0.6** — Référentiel CERTIX intégré (369 règles, 5 profils), 1797+ checkpoints.
 
 26 outils, 19 skills, 1797+ points de contrôle sur 11 dimensions. Compatible avec n'importe quelle plateforme IA (Claude Code, Cursor, Windsurf, Copilot…) via le Model Context Protocol.
 
